@@ -34,8 +34,8 @@ enum state {
   STATE_SEP
 };
 
-// This is used to equivalent to the characters that are allowed to be part of
-// the output string as opposed to the ones that get replaced by the separator.
+// This is used to tell if the given character is allowed to be part of the
+// output string as opposed to being replaced by the separator.
 static inline int ischar(int character) {
   return (
     (character >= 'a' && character <= 'z') ||
@@ -63,7 +63,7 @@ static VALUE parameterize(VALUE string, VALUE kwargs) {
   // Configure the options based on the inputted keyword arguments
   const char *separator = options[0] == Qundef ? "-" : StringValueCStr(options[0]);
   size_t separator_size = strlen(separator);
-  int(*caser)(int) = options[1] == Qtrue ? tosame : tolower;
+  int(*tocase)(int) = options[1] == Qtrue ? tosame : tolower;
 
   // Set the initial state and build a buffer for the resulting string
   enum state state = STATE_START;
@@ -86,13 +86,13 @@ static VALUE parameterize(VALUE string, VALUE kwargs) {
     switch (state) {
       case STATE_START:
         if (ischar(character)) {
-          result[size++] = caser(character);
+          result[size++] = tocase(character);
           state = STATE_CHAR;
         }
         break;
       case STATE_CHAR:
         if (ischar(character)) {
-          result[size++] = caser(character);
+          result[size++] = tocase(character);
         } else {
           state = STATE_SEP;
         }
@@ -102,7 +102,7 @@ static VALUE parameterize(VALUE string, VALUE kwargs) {
           strncpy(result + size, separator, separator_size);
           size += separator_size;
 
-          result[size++] = caser(character);
+          result[size++] = tocase(character);
           state = STATE_CHAR;
         } else {
           state = STATE_SEP;
