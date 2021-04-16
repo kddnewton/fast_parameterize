@@ -105,8 +105,6 @@ static VALUE parameterize(VALUE string, VALUE kwargs) {
 
           result[size++] = tocase(character);
           state = STATE_CHAR;
-        } else {
-          state = STATE_SEP;
         }
         break;
     }
