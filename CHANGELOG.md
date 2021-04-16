@@ -6,11 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
-## [0.1.0] - 2020-10-09
+## [0.1.1] - 2021-04-16
+
+### Changed
+
+- Use `prepend` instead of `include` to ensure our overrides get loaded.
+
+## [0.1.0] - 2021-04-16
 
 ### Added
 
 - 🎉 Initial release! 🎉
 
-[unreleased]: https://github.com/kddeisz/fast_parameterize/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/kddeisz/fast_parameterize/compare/39c5a7...v0.1.0
+[unreleased]: https://github.com/kddeisz/fast_parameterize/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/kddeisz/fast_parameterize/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/kddeisz/fast_parameterize/compare/d43343...v0.1.0
