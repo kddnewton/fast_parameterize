@@ -5,3 +5,11 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'activesupport'
+gem 'benchmark-ips'
+gem 'bundler'
+gem 'minitest'
+gem 'rake'
+gem 'rake-compiler'
+gem 'rubocop'
+gem 'simplecov'
+gem 'steep'
