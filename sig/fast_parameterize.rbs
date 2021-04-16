@@ -1,0 +1,10 @@
+module FastParameterize
+  VERSION: String
+
+  def self.active_support: () -> void
+  def self.parameterize: (String string, ?separator: String, ?preserve_case: bool) -> String
+end
+
+class String
+  def parameterize: (?separator: String, ?preserve_case: bool) -> String
+end
