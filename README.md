@@ -1,7 +1,26 @@
-# fast_parameterize
+# `String#parameterize` Ruby Extension
 
 [![Build Status](https://github.com/kddeisz/fast_parameterize/workflows/Main/badge.svg)](https://github.com/kddeisz/fast_parameterize/actions)
 [![Gem Version](https://img.shields.io/gem/v/fast_parameterize.svg)](https://rubygems.org/gems/fast_parameterize)
+
+`fast_parameterize` is a C extension that provides a fast implementation of [ActiveSupport's `String#parameterize` method](http://api.rubyonrails.org/classes/String.html#method-i-parameterize).
+
+## Is it fast?
+
+At last check, these were the benchmarks (obtained by running `bin/bench` with ActiveSupport 6.1.3):
+
+```
+Warming up --------------------------------------
+       ActiveSupport     8.000  i/100ms
+    FastParameterize   131.000  i/100ms
+Calculating -------------------------------------
+       ActiveSupport     82.566  (± 2.4%) i/s -    416.000  in   5.042230s
+    FastParameterize      1.308k (± 3.4%) i/s -      6.550k in   5.014582s
+
+Comparison:
+    FastParameterize:     1308.0 i/s
+       ActiveSupport:       82.6 i/s - 15.84x  (± 0.00) slower
+```
 
 ## Installation
 
@@ -13,13 +32,11 @@ gem 'fast_parameterize'
 
 And then execute:
 
-    $ bundle install
+    $ bundle
 
 Or install it yourself as:
 
     $ gem install fast_parameterize
-
-## Usage
 
 ## Development
 
@@ -29,12 +46,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/fast_parameterize. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/kddeisz/fast_parameterize/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/fast_parameterize.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the fast_parameterize project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/kddeisz/fast_parameterize/blob/master/CODE_OF_CONDUCT.md).

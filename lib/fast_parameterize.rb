@@ -12,7 +12,7 @@ module FastParameterize
   # Override ActiveSupport::Inflector::parameterize to use
   # FastParameterize::parameterize.
   module ActiveSupportInflectorPatch
-    def parameterize(string, separator: "-", preserve_case: false, locale: nil)
+    def parameterize(string, separator: '-', preserve_case: false, locale: nil)
       FastParameterize.parameterize(
         ActiveSupport::Inflector.transliterate(string, locale: locale),
         separator: separator,
@@ -23,7 +23,7 @@ module FastParameterize
 
   # Override String#parameterize to use FastParameterize::parameterize.
   module ActiveSupportStringPatch
-    def parameterize(separator: "-", preserve_case: false, locale: nil)
+    def parameterize(separator: '-', preserve_case: false, locale: nil)
       FastParameterize.parameterize(
         ActiveSupport::Inflector.transliterate(self, locale: locale),
         separator: separator,
@@ -44,8 +44,9 @@ module FastParameterize
   # Hook into ActiveSupport::Inflector and String to take advantage of
   # FastParameterize.
   def self.active_support
-    ActiveSupport::Inflector.singleton_class.prepend(ActiveSupportInflectorPatch)
-    String.prepend(ActiveSupportStringPatch)
+    ActiveSupport::Inflector.alias_method(:as_parameterize, :parameterize)
+    ActiveSupport::Inflector.extend(ActiveSupportInflectorPatch)
+    String.include(ActiveSupportStringPatch)
   end
 end
 

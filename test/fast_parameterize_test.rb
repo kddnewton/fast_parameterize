@@ -13,7 +13,8 @@ class FastParameterizeTest < Minitest::Test
   end
 
   def test_preserve_case
-    assert_equal 'FOO-BAR-BAZ', '^FOO@BAR?BAZ$'.parameterize(preserve_case: true)
+    assert_equal 'FOO-BAR-BAZ',
+                 '^FOO@BAR?BAZ$'.parameterize(preserve_case: true)
   end
 
   def test_version
