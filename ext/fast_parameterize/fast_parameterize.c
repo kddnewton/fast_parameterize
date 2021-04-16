@@ -115,7 +115,7 @@ static VALUE parameterize(VALUE string, VALUE kwargs) {
   return rb_enc_str_new(result, size, encoding);
 }
 
-// FastUnderscore::parameterize
+// FastParameterize::parameterize
 static VALUE fast_parameterize(int argc, VALUE* argv, VALUE self) {
   VALUE string = Qnil;
   VALUE kwargs = Qnil;
