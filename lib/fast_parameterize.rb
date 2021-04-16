@@ -45,8 +45,8 @@ module FastParameterize
   # FastParameterize.
   def self.active_support
     ActiveSupport::Inflector.alias_method(:as_parameterize, :parameterize)
-    ActiveSupport::Inflector.include(ActiveSupportInflectorPatch)
-    String.include(ActiveSupportStringPatch)
+    ActiveSupport::Inflector.prepend(ActiveSupportInflectorPatch)
+    String.prepend(ActiveSupportStringPatch)
   end
 end
 
