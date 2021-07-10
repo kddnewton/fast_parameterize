@@ -5,8 +5,8 @@ require_relative 'lib/fast_parameterize/version'
 Gem::Specification.new do |spec|
   spec.name    = 'fast_parameterize'
   spec.version = FastParameterize::VERSION
-  spec.authors = ['Kevin Deisz']
-  spec.email   = ['kevin.deisz@gmail.com']
+  spec.authors = ['Kevin Newton']
+  spec.email   = ['kddnewton@gmail.com']
 
   spec.summary     = 'Fast String#parameterize implementation'
   spec.description = 'Provides a C-optimized method for parameterizing a string'
