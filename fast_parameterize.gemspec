@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary     = 'Fast String#parameterize implementation'
   spec.description = 'Provides a C-optimized method for parameterizing a string'
-  spec.homepage    = 'https://github.com/kddeisz/fast_parameterize'
+  spec.homepage    = 'https://github.com/kddnewton/fast_parameterize'
   spec.license     = 'MIT'
 
   spec.files = Dir.chdir(__dir__) do

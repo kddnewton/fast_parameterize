@@ -1,6 +1,6 @@
 # `String#parameterize` Ruby Extension
 
-[![Build Status](https://github.com/kddeisz/fast_parameterize/workflows/Main/badge.svg)](https://github.com/kddeisz/fast_parameterize/actions)
+[![Build Status](https://github.com/kddnewton/fast_parameterize/workflows/Main/badge.svg)](https://github.com/kddnewton/fast_parameterize/actions)
 [![Gem Version](https://img.shields.io/gem/v/fast_parameterize.svg)](https://rubygems.org/gems/fast_parameterize)
 
 `fast_parameterize` is a C extension that provides a fast implementation of [ActiveSupport's `String#parameterize` method](http://api.rubyonrails.org/classes/String.html#method-i-parameterize).
@@ -46,7 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/fast_parameterize.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kddnewton/fast_parameterize.
 
 ## License
 
