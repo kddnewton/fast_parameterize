@@ -13,12 +13,11 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-        ruby-version: 3.0
+        ruby-version: '3.1'
     - name: Lint and test
       run: |
         bundle exec rubocop --parallel
         bundle exec rake test
-        bundle exec steep check
   automerge:
     name: AutoMerge
     needs: ci
