@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'fast_parameterize/version'
-require 'fast_parameterize/fast_parameterize'
+require "fast_parameterize/version"
+require "fast_parameterize/fast_parameterize"
 
 # By default, FastParameterize already defines String#parameterize and
 # FastParameterize::parameterize. In the case that we're using ActiveSupport,
@@ -12,7 +12,7 @@ module FastParameterize
   # Override ActiveSupport::Inflector::parameterize to use
   # FastParameterize::parameterize.
   module ActiveSupportInflectorPatch
-    def parameterize(string, separator: '-', preserve_case: false, locale: nil)
+    def parameterize(string, separator: "-", preserve_case: false, locale: nil)
       FastParameterize.parameterize(
         ActiveSupport::Inflector.transliterate(string, locale: locale),
         separator: separator,
@@ -23,7 +23,7 @@ module FastParameterize
 
   # Override String#parameterize to use FastParameterize::parameterize.
   module ActiveSupportStringPatch
-    def parameterize(separator: '-', preserve_case: false, locale: nil)
+    def parameterize(separator: "-", preserve_case: false, locale: nil)
       FastParameterize.parameterize(
         ActiveSupport::Inflector.transliterate(self, locale: locale),
         separator: separator,
