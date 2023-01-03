@@ -27,7 +27,7 @@ Comparison:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fast_parameterize'
+gem "fast_parameterize"
 ```
 
 And then execute:
