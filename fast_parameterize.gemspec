@@ -23,14 +23,18 @@ Gem::Specification.new do |spec|
     "rubygems_mfa_required" => "true"
   }
 
-  spec.files =
-    Dir.chdir(__dir__) do
-      `git ls-files -z`.split("\x0")
-        .reject { |f| f.match(%r{^(test|spec|features)/}) }
-    end
+  spec.files = %w[
+    CHANGELOG.md
+    CODE_OF_CONDUCT.md
+    LICENSE
+    README.md
+    ext/fast_parameterize/extconf.rb
+    ext/fast_parameterize/fast_parameterize.c
+    fast_parameterize.gemspec
+    lib/fast_parameterize.rb
+    lib/fast_parameterize/version.rb
+  ]
 
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = %w[lib]
   spec.extensions = ["ext/fast_parameterize/extconf.rb"]
 end
